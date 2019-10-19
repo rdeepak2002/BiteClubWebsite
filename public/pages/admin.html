@@ -1,0 +1,36 @@
+<div class="container">
+	<div>
+		<h1 class="titleHeader noselect" align="center">Admin</h1>
+
+		<h3 class="question noselect">Create Meeting</h3>
+
+		<input class="form-control form-rounded" id="idForm" placeholder="Meeting number">
+		<input class="form-control form-rounded" id="titleForm" placeholder="Title">
+		<input class="form-control form-rounded" id="descriptionForm" placeholder="Description">
+		<input class="form-control form-rounded" id="dateForm" placeholder="Date Ex: May 3, 2020 (Wednesday)">
+		<input class="form-control form-rounded" id="imageForm" placeholder="Image URL">
+
+		<button class="button create" ng-click="create()">Create Meeting</button>
+	</div>
+
+	<div>
+		<h3 class="question noselect">Delete Meeting</h3>
+
+		<input class="form-control form-rounded" id="meetingNumber" placeholder="Meeting number">
+
+		<button class="button danger" ng-click="delete()">Delete Meeting</button>
+	</div>
+
+	<div>
+		<h3 class="question noselect">Edit Meeting</h3>
+
+		<input class="form-control form-rounded" id="idFormE" placeholder="Meeting number">
+		<input class="form-control form-rounded" id="titleFormE" placeholder="Title">
+		<input class="form-control form-rounded" id="descriptionFormE" placeholder="Description">
+		<input class="form-control form-rounded" id="dateFormE" placeholder="Date Ex: May 3, 2020 (Wednesday)">
+		<input class="form-control form-rounded" id="imageFormE" placeholder="Image URL">
+
+		<button class="button edit" ng-click="edit()">Edit Meeting</button>
+	</div>
+</div>
+

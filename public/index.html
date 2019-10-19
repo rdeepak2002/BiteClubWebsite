@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>BITE</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
+
+    <!-- Angular JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="/css/globalstyle.css">
+    <link rel="stylesheet" href="/css/teampage.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="resources/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="resources/favicon-16x16.png" sizes="16x16" />
+
+  </head>
+
+  <body>
+
+    <div class="overlay"></div>
+
+    <video id="myVideo" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="/resources/bgvideo.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <nav class="noselect navbar navbar-expand-lg navbar-light bg-light static-top">
+        <div class="container">
+          <a class="navbar-brand" href="#/">
+            <img src="/resources/blacklogo.png" alt="" height="50" width="42">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#/">
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#/meetings">Meetings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#/about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#/officers">Officers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#/contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div>
+          <div ng-view></div>
+      </div>
+
+    </div>
+
+    <script src="app.js"></script>
+    <script src="router.js"></script>
+    <script src="init.js"></script>
+    <script src="database.js"></script>
+    <script src="/utility/date.js"></script>
+    <script src="/controllers/meetingController.js"></script>
+    <script src="/controllers/aboutController.js"></script>
+    <script src="/controllers/contactController.js"></script>
+    <script src="/controllers/officerController.js"></script>
+    <script src="/controllers/homeController.js"></script>
+    <script src="/controllers/adminController.js"></script>
+
+  </body>
+</html>
